@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "SARDINE_experiments"
+version = "1.0.0"
+description = "Companion experiments for Sardine"
+authors = ["Romain Deffayet <romain.deffayet@naverlabs.com>", "Thibaut Thonet<thibaut.thonet@naverlabs.com>",
+            "Dongyoon Hwang <godnpeter@kaist.ac.kr>", "Vassilissa Lehoux <vassilissa.lehoux@naverlabs.com>", 
+            "Jean-Michel Renders <jean-michel.renders@naverlabs.com>", "Maarten de Rijke <m.derijke@uva.nl>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "~3.10"
+gymnasium = "~0.28.0"
+pandas = "~2.0.2"
+pytorch-lightning = "~2.0.2"
+scikit-learn = "~1.2.2"
+torch = "~1.13.1"
+
+[tool.poetry.group.debug]
+optional = true
+[tool.poetry.group.debug.dependencies]
+line-profiler = "~4.0.3"
+
+[tool.poetry.group.wandb]
+optional = true
+[tool.poetry.group.wandb.dependencies]
+wandb = "~0.15"
+
+[tool.poetry.group.aim]
+optional = true
+[tool.poetry.group.aim.dependencies]
+aim = "~3.17"
+
+[tool.poetry.group.tensorboard]
+optional = true
+[tool.poetry.group.tensorboard.dependencies]
+tensorboard = "^2.11.2"
+
+[tool.poetry.group.plot]
+optional = true
+[tool.poetry.group.plot.dependencies]
+matplotlib = "^3.7"
+seaborn = "^0.12"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

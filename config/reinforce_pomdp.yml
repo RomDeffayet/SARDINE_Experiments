@@ -1,0 +1,23 @@
+# General parameters
+env-id: ["SingleItem-Static-v0"] #, "SingleItemDynamic-v0"]
+seed: [2023, 2024, 2025]
+agent: reinforce
+observable: False
+state-dim: 32
+
+# Training
+total-timesteps: 500000
+val-interval: 10000
+n-val-episodes: 25
+buffer-size: 100
+
+# Agent
+policy-frequency: 1
+policy-lr: 0.0003
+gamma: 0.8
+hidden-size: 256
+
+# Misc
+info: topk_ideal_obs
+track: wandb #wandb
+wandb-project-name: SlateRL

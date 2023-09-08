@@ -1,0 +1,11 @@
+# General parameters
+dataset: [SlateRerank-Static-v0_seed2023_idealstate.pt] #SlateRerank-Static-v0_oracle_epsilon0.0_seed2023.pt] #, SlateRerank-Bored-v0_aoracle_epsilon0.0_seed2023.pt]
+seed: [2023, 2024, 2025, 2026, 2027]
+
+# GeMS pretraining
+click-model: pbm
+max-epochs: 30
+
+# Misc
+info: click_models
+track: wandb

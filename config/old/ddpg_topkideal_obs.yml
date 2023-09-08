@@ -1,0 +1,29 @@
+# General parameters
+env-id: ["SlateBorNoInf-ucar-v0"] #, "SlateBorNoInf-ucar-v0", "SlateBorNoInf-utloi-worp-v0", "SlateBorNoInf-utloi-wrp-v0"]
+seed: 2023 #[2023, 2024, 2025]
+agent: ddpg
+ranker: topk_ideal
+observable: True
+
+# Training
+total-timesteps: 500000
+val-interval: 50000
+n-val-episodes: 25
+buffer-size: 1000000
+batch-size: 32
+
+# Agent
+n-updates: 1
+policy-frequency: 1
+q-lr: 0.001
+policy-lr: 0.0003
+tau: 0.5
+target-network-frequency: 1
+target-actor-frequency: 1
+hidden-size: 256
+
+# Misc
+info: topk_ideal_obs
+track: tensorboard #wandb
+#wandb-entity: SlateRL
+#wandb-project-name: SlateRL

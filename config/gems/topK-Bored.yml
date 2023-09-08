@@ -1,0 +1,13 @@
+# General parameters
+seed: [2023, 2024, 2025, 2026, 2027]
+
+# GeMS pretraining
+latent-dim: 2
+max_epochs: 30
+lambda-KL: 1.0
+lambda-click: 0.0
+dataset: SlateTopK-Bored-v0_seed2023.pt
+
+# Misc
+info: gems-bored
+track: tensorboard #wandb

@@ -1,0 +1,30 @@
+# General parameters
+env-id: SlateTopK-Bored-v0
+seed: [2705, 3751, 4685, 3688, 6383]
+agent: sac
+ranker: topk
+observable: True
+
+# Training
+total-timesteps: 500000
+val-interval: 50000
+n-val-episodes: 25
+buffer-size: 1000000
+batch-size: 32
+
+# Agent
+gamma: 0.8
+n-updates: 1
+policy-frequency: 1
+q-lr: 0.001
+policy-lr: 0.0003
+tau: 0.05
+target-network-frequency: 1
+hidden-size: 256
+autotune: True
+singleq: True
+
+# Misc
+info: slatetopk-bored-sactopkideal
+track: wandb
+wandb-project-name: SlateRL

@@ -1,0 +1,35 @@
+# General parameters
+env-id: ["SlateBorNoInf-ucar-v0"] #, "SlateBorNoInf-ucar-v0", "SlateBorNoInf-utloi-worp-v0", "SlateBorNoInf-utloi-wrp-v0"]
+seed: 2023 #[2023, 2024, 2025]
+agent: ddpg
+ranker: topk_ideal
+observable: False
+
+# Training
+total-timesteps: 500000
+val-interval: 50000
+n-val-episodes: 25
+buffer-size: 1000000
+batch-size: 32
+
+# Agent
+n-updates: 1
+policy-frequency: 1
+q-lr: 0.001
+policy-lr: 0.0003
+tau: 0.05
+target-network-frequency: 1
+target-actor-frequency: 1
+hidden-size: 256
+
+# State encoder
+state-encoder: gru # gru or transformer
+state-dim: 32  # Only for POMDP
+sampled-seq-len: 10
+#item-dim-se: 32 # Only for Transformer
+
+# Misc
+info: ddpg_topkideal_pomdp
+track: tensorboard #wandb
+#wandb-entity: SlateRL
+#wandb-project-name: SlateRL

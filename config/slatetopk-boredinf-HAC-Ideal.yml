@@ -1,0 +1,36 @@
+# General parameters
+env-id: SlateTopK-BoredInf-v0
+seed: [2705, 3751, 4685, 3688, 6383]
+agent: hac
+observable: True
+
+# Training
+total-timesteps: 500000
+val-interval: 50000
+n-val-episodes: 25
+buffer-size: 1000000
+batch-size: 32
+
+# Agent
+gamma: 0.8
+n-updates: 1
+policy-frequency: 1
+hyper-frequency: 1
+behavior-frequency: 1
+q-lr: 0.001 # Range: 0.001 0.0001, default: 0.001
+policy-lr: 0.0003 # Range: 0.0003 0.00003, default: 0.0003
+behavior-lr: 0.00003 # Range: 0.00003 0.000003, default: 0.00003
+tau: 0.5 # Range: 0.5 0.05, default: 0.5
+target-network-frequency: 1
+target-actor-frequency: 1
+hidden-size: 256
+reparam-std: 0.1 # Range: 1 0.1 0.01 0.001, default: 0.1
+hyper-weight: 0.1 # Range: 1 0.1 0.01, default: 0.1
+latent-dim: 32 # Range: 64 32 16, default: 32; Unused if raw-features = True
+latent-low: 0.0 # Use -1 if raw-features = False
+latent-high: 1.0
+raw-features: True
+
+# Misc
+info: slatetopk-boredinf-hacideal
+track: tensorboard #wandb

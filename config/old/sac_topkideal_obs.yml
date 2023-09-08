@@ -1,0 +1,30 @@
+# General parameters
+env-id: SingleItemDynamic-v0 #["SingleItemStatic-v0", "SingleItemDynamic-v0", "SlateTopKStatic-v0", "SlateTopKDynamic-v0", "SlateRerankStatic-v0", "SlateRerankDynamic-v0"]
+seed: 2023 #[2023, 2024, 2025]
+agent: sac
+ranker: topk_ideal
+observable: True
+
+# Training
+total-timesteps: 500000
+val-interval: 50000
+n-val-episodes: 25
+buffer-size: 1000000
+batch-size: 32
+
+# Agent
+n-updates: 1
+policy-frequency: 1
+q-lr: 0.001
+policy-lr: 0.0003
+tau: 0.05
+target-network-frequency: 1
+hidden-size: 256
+autotune: True
+singleq: True
+
+# Misc
+info: sac_topkideal_obs
+track: tensorboard #wandb
+#wandb-entity: SlateRL
+#wandb-project-name: SlateRL

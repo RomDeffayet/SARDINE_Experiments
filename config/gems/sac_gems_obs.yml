@@ -1,0 +1,50 @@
+# General parameters
+data_dir: /scratch/2/user/rdeffaye/SlateRL/
+env-id: 
+  SlateTopK-Bored-v0:
+    dataset: SlateTopK-Bored-v0_epsilon0.5_seed2023.pt
+  # SlateTopK-BoredInf-v0:
+  #   dataset: SlateTopK-BoredInf-v0_epsilon0.5_seed2023.pt
+  # SlateTopK-Uncertain-v0:
+  #   dataset: SlateTopK-Uncertain-v0_epsilon0.5_seed2023.pt
+seed: [2705, 3751, 4685, 3688, 6383]
+agent: sac
+ranker: gems
+observable: True
+
+# Training
+total-timesteps: 500000
+val-interval: 25000
+n-val-episodes: 25
+buffer-size: 1000000
+batch-size: 32
+
+# Agent
+gamma: 0.8
+n-updates: 1
+policy-frequency: 1
+q-lr: 0.001
+policy-lr: 0.0003
+tau: 0.05
+target-network-frequency: 1
+hidden-size: 256
+autotune: True
+singleq: True
+
+# State encoder
+state-encoder: transformer
+sampled-seq-len: 10
+item-dim-se: 32 # Only for Transformer
+
+# GeMS pretraining
+pretrain: True
+item-embeddings: "mf"
+latent-dim: 16
+max_epochs: 50
+lambda-KL: 1.0
+lambda-click: 0.5
+
+# Misc
+info: gems
+track: wandb
+wandb-project-name: SlateRL
